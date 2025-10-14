@@ -6,7 +6,7 @@ function Header() {
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="text-3xl font-bold">LearnSphere</a>
+              <a href="#" className="text-3xl font-bold">LMS Academy</a>
             </div>
 
             {/* Menu */}
