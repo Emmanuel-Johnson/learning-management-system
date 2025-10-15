@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 // Testimonial data
 const testimonials = [
@@ -53,7 +54,7 @@ function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <a key={index} href="#" className="group">
+            <Link key={index} to="/detail/1" className="group">
               <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
                 <img
                   src={card.img}
@@ -65,7 +66,7 @@ function Home() {
                   <p className="text-gray-600 flex-1">{card.description}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

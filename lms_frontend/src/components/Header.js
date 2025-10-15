@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Header() {
   return (
   
@@ -6,14 +8,15 @@ function Header() {
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="text-3xl font-bold">LMS Academy</a>
+              <Link to="/" className="text-3xl font-bold">LMS Academy</Link>
             </div>
 
             {/* Menu */}
             <div className="flex space-x-6">
-              <a href="#" className="text-black hover:text-white font-bold">Home</a>
+              <Link to="/" className="text-black hover:text-white font-bold">Home</Link>
               <a href="#" className="text-black hover:text-white font-bold">Courses</a>
               <a href="#" className="text-black hover:text-white font-bold">Teachers</a>
+              <Link to="/about" className="text-black hover:text-white font-bold">About Us</Link>
             </div>
           </div>
         </div>
