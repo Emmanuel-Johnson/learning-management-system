@@ -34,7 +34,7 @@ export default function CourseDetail() {
 
   return (
     <>
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div className="min-h-screen bg-red-200 py-12 px-4">
       {/* Course Details Card */}
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row mb-12">
         {/* Left - Image */}
@@ -82,7 +82,7 @@ export default function CourseDetail() {
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-gray-700">
-            <thead className="border-b bg-gray-100">
+            <thead className="border-b">
               <tr>
                 <th className="py-3 px-4 font-semibold">No.</th>
                 <th className="py-3 px-4 font-semibold">Video Title</th>
@@ -112,7 +112,7 @@ export default function CourseDetail() {
       </div>
     </div>
     {/* Latest Courses Section */}
-    <div className="px-12">
+    <div className="p-12 bg-orange-100">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Latest Courses</h3>
           

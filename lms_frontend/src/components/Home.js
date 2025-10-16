@@ -42,7 +42,7 @@ function Home() {
   };
 
   return (
-    <main className="mx-12 bg-gray-100 min-h-screen space-y-12 tracking-tighter pb-10">
+    <main className="mx-auto px-12 pt-12 bg-red-200 min-h-screen space-y-12 tracking-tighter pb-10">
       {/* Latest Courses Section */}
       <section className="space-y-12">
         <div className="flex items-center justify-between mb-6">
