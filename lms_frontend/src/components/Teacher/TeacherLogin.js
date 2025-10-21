@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, User, Lock, Sparkles } from 'lucide-react';
 
-function Login() {
+function TeacherLogin() {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ function Login() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-400 mb-4 shadow-lg">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Teacher Login</h2>
             <p className="text-gray-600">Sign in to continue your journey</p>
           </div>
 
@@ -132,4 +132,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default TeacherLogin;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, User, Lock, Mail, Sparkles } from 'lucide-react';
 
-function Register() {
+function TeacherRegister() {
   const [showPassword, setShowPassword] = useState(false);
   const [interests, setInterests] = useState('');
 
@@ -20,7 +20,7 @@ function Register() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-400 mb-4 shadow-lg">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Create Account</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Teacher Register</h2>
             <p className="text-gray-600">Join and start your journey</p>
           </div>
 
@@ -94,7 +94,7 @@ function Register() {
 
             {/* Interests as input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Interests (comma separated)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Skills (comma separated)</label>
               <input
                 type="text"
                 placeholder="Python, Django, SQL"
@@ -126,4 +126,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default TeacherRegister;

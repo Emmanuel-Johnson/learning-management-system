@@ -47,7 +47,7 @@ function Home() {
       <section className="space-y-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Latest Courses</h3>
-          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg transition-colors">
+          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
             See All →
           </a>
         </div>
@@ -55,7 +55,7 @@ function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <Link key={index} to="/detail/1" className="group">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
                 <img
                   src={card.img}
                   alt={card.title}
@@ -75,14 +75,14 @@ function Home() {
       <section className="space-y-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Popular Courses</h3>
-          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg transition-colors">
+          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
             See All →
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <a key={index} href="#" className="group">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
                 <img
                   src={card.img}
                   alt={card.title}
@@ -98,25 +98,26 @@ function Home() {
         </div>
       </section>
 
+
       {/* Popular Teachers Section */}
       <section className="space-y-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Popular Teachers</h3>
-          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg transition-colors">
+          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
             See All →
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <a key={index} href="#" className="group">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
                 <img
                   src={card.img}
                   alt={card.title}
                   className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="p-6 flex-1 flex flex-col space-y-2">
-                  <h2 className="text-xl font-semibold">Teacher Name</h2>
+                  <h2 className="text-xl font-semibold">{card.title}</h2>
                   <p className="text-gray-600 flex-1">{card.description}</p>
                 </div>
               </div>
@@ -125,11 +126,13 @@ function Home() {
         </div>
       </section>
 
+      
+
       {/* Student Testimonial Section */}
       <section className="space-y-12 max-w-4xl mx-auto py-12 text-center">
         <h2 className="text-4xl font-bold mb-6">Student Testimonials</h2>
 
-        <div className="relative bg-white rounded-lg p-8 shadow-lg">
+        <div className="relative bg-amber-100 rounded-lg p-8 shadow-lg">
           <p className="text-gray-700 mb-4 italic">
             "{testimonials[currentTestimonial].feedback}"
           </p>
@@ -148,13 +151,13 @@ function Home() {
           {/* Navigation buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 transition"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-gray-100 rounded-full p-2 transition"
           >
             &#8592;
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 transition"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-gray-100 rounded-full p-2 transition"
           >
             &#8594;
           </button>

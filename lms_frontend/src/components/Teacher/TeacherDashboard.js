@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import MyCourse from './MyCourse'
-import FavouriteCourse from './FavouriteCourse'
-import RecommendedCourse from "./RecommendedCourse";
+import FavouriteCourse from './AddCourse'
+import RecommendedCourse from "./MyUsers";
 import ProfileSetting from "./ProfileSetting";
 import ChangePassword from "./ChangePassword";
+import MyCourse from './MyCourse'
+import AddCourse from "./AddCourse";
+import MyUsers from "./MyUsers";
 
-export default function Dashboard() {
+export default function TeacherDashboard() {
   const [active, setActive] = useState("my-courses");
 
   const menu = [
     { id: "my-courses", label: "My Courses", message: "View all courses you are enrolled in."},
-    { id: "favourite-courses", label: "Favourite Courses", message: "Courses you have favourited." },
-    { id: "recommended-courses", label: "Recommended Courses", message:  "Courses recommended based on your activity." },
+    { id: "add-course", label: "Add Course", message: "Courses you have favourited." },
+    { id: "my-users", label: "My Users", message:  "Courses recommended based on your activity." },
     { id: "profile-setting", label: "Profile Setting", message:  "Update your profile details here." },
     { id: "change-password", label: "Change Password", message:  "Change your account password securely." },
   ];
@@ -63,12 +65,12 @@ export default function Dashboard() {
            <MyCourse/>
           )}
 
-          {active === "favourite-courses" && (
-           <FavouriteCourse />
+          {active === "add-course" && (
+           <AddCourse />
           )}
 
-          {active === "recommended-courses" && (
-           <RecommendedCourse />
+          {active === "my-users" && (
+           <MyUsers />
           )}
 
           {active === "profile-setting" && (

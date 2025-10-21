@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Play } from "lucide-react"; // optional icon library
 import { Link } from "react-router-dom"
+import TeacherDetail from "./TeacherDetail";
 
 export default function CourseDetail() {
   const { course_id } = useParams();
@@ -54,7 +55,11 @@ export default function CourseDetail() {
 
             <ul className="space-y-2 text-gray-700">
               <li>
-                <span className="font-semibold">Course by:</span> {course.teacher}
+                <span className="font-semibold">Course by: </span> 
+                <Link to="/teacher-detail/1" className="underline text-blue-600 hover:text-blue-800">
+      {course.teacher}
+    </Link>
+
               </li>
               <li>
                 <span className="font-semibold">Duration:</span> {course.duration}
@@ -75,7 +80,7 @@ export default function CourseDetail() {
       </div>
 
       {/* Course Videos Table */}
-      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6">
+      <div className="max-w-4xl mx-auto rounded-xl shadow-md p-6 bg-orange-50">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
           Course Content
         </h2>
@@ -94,7 +99,7 @@ export default function CourseDetail() {
               {videos.map((video, index) => (
                 <tr
                   key={video.id}
-                  className="border-b hover:bg-gray-50 transition-colors"
+                  className="border-b hover:bg-orange-100 transition-colors"
                 >
                   <td className="py-3 px-4">{index + 1}</td>
                   <td className="py-3 px-4">{video.title}</td>
@@ -112,7 +117,7 @@ export default function CourseDetail() {
       </div>
     </div>
     {/* Latest Courses Section */}
-    <div className="p-12 bg-orange-100">
+    <div className="p-12 bg-amber-100">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Latest Courses</h3>
           
