@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Play } from "lucide-react"; // optional icon library
 import { Link } from "react-router-dom"
 import TeacherDetail from "./TeacherDetail";
 
 export default function CourseDetail() {
+  const [open, setOpen] = useState(false);
   const { course_id } = useParams();
   const cards = [
     { title: "Python", img: "/python.png" },
@@ -105,9 +107,12 @@ export default function CourseDetail() {
                   <td className="py-3 px-4">{video.title}</td>
                   <td className="py-3 px-4">{video.duration}</td>
                   <td className="py-3 px-4 text-center">
-                    <button className="flex items-center justify-center mx-auto bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-all">
-                      <Play className="w-4 h-4 mr-1" /> Play
-                    </button>
+                    <button
+onClick={() => setOpen(true)}
+className="flex items-center justify-center mx-auto bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-all"
+>
+<Play className="w-4 h-4 mr-1" /> Play
+</button>
                   </td>
                 </tr>
               ))}
@@ -116,6 +121,46 @@ export default function CourseDetail() {
         </div>
       </div>
     </div>
+    {/* Modal */}
+   {open && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-xl shadow-xl w-[95%] max-w-3xl relative">
+
+      {/* Close (X) Button */}
+      <button
+        onClick={() => setOpen(false)}
+        className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+      >
+        ×
+      </button>
+
+      {/* Video Title */}
+      <h2 className="text-xl font-semibold mb-4 text-center">Watch Video</h2>
+
+      {/* YouTube Video iframe (Bigger area) */}
+      <div className="w-full h-[500px] rounded-lg overflow-hidden">
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Bottom Close Button */}
+      <button
+        onClick={() => setOpen(false)}
+        className="mt-5 bg-red-600 text-white w-full py-3 text-lg rounded-md hover:bg-red-700"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
+
     {/* Latest Courses Section */}
     <div className="p-12 bg-amber-100">
         <div className="flex items-center justify-between mb-6">

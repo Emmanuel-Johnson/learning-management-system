@@ -12,7 +12,7 @@ function Header() {
           {/* Menu */}
           <div className="flex space-x-6 items-center">
             <Link to="/" className="text-white hover:text-gray-300 font-bold">Home</Link>
-            <a href="#" className="text-white hover:text-gray-300 font-bold">Courses</a>
+            <Link to="all-courses" className="text-white hover:text-gray-300 font-bold">Courses</Link>
             {/* Teacher Dropdown */}
             <div className="relative group">
               <button className="text-white hover:text-gray-300 font-bold py-2">

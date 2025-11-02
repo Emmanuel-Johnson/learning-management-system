@@ -1,5 +1,57 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import LatestCourses from "./LatestCourses";
+
+const teachers = [
+  { 
+    title: "Albert Einstein", 
+    img: "Einstein.jpeg", 
+    description: "Learn Python from scratch!", 
+    rating: 4.5, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Master backend with Django!", 
+    rating: 4.6, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Crack coding interviews!", 
+    rating: 4.4, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Front-end development with React!", 
+    rating: 4.8, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Learn Python from scratch!", 
+    rating: 4.5, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Master backend with Django!", 
+    rating: 4.6, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Crack coding interviews!", 
+    rating: 4.4, 
+  },
+  { 
+    title: "Albert Einstein",  
+    img: "Einstein.jpeg", 
+    description: "Front-end development with React!", 
+    rating: 4.8, 
+  },
+];
 
 // Testimonial data
 const testimonials = [
@@ -25,11 +77,66 @@ const testimonials = [
 
 function Home() {
   const cards = [
-    { title: "Python", img: "python.png" },
-    { title: "Django", img: "django.png" },
-    { title: "DSA", img: "DSA.png" },
-    { title: "React", img: "React.png" },
-  ];
+  { 
+    title: "Python", 
+    img: "python.png", 
+    description: "Learn Python from scratch!", 
+    rating: 4.5, 
+    views: "12k" 
+  },
+  { 
+    title: "Django", 
+    img: "django.png", 
+    description: "Master backend with Django!", 
+    rating: 4.6, 
+    views: "9.3k" 
+  },
+  { 
+    title: "DSA", 
+    img: "DSA.png", 
+    description: "Crack coding interviews!", 
+    rating: 4.4, 
+    views: "15k" 
+  },
+  { 
+    title: "React", 
+    img: "React.png", 
+    description: "Front-end development with React!", 
+    rating: 4.8, 
+    views: "20k" 
+  },
+  { 
+    title: "Python", 
+    img: "python.png", 
+    description: "Learn Python from scratch!", 
+    rating: 4.5, 
+    views: "12k" 
+  },
+  { 
+    title: "Django", 
+    img: "django.png", 
+    description: "Master backend with Django!", 
+    rating: 4.6, 
+    views: "9.3k" 
+  },
+  { 
+    title: "DSA", 
+    img: "DSA.png", 
+    description: "Crack coding interviews!", 
+    rating: 4.4, 
+    views: "15k" 
+  },
+  { 
+    title: "React", 
+    img: "React.png", 
+    description: "Front-end development with React!", 
+    rating: 4.8, 
+    views: "20k" 
+  },
+];
+
+
+
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -47,84 +154,121 @@ function Home() {
       <section className="space-y-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="font-lighter text-4xl font-mono">Latest Courses</h3>
-          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
+          <Link to="/all-courses" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
             See All →
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <Link key={index} to="/detail/1" className="group">
-              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-6 flex-1 flex flex-col space-y-2">
-                  <h2 className="text-xl font-semibold">{card.title}</h2>
-                  <p className="text-gray-600 flex-1">{card.description}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+  {cards.map((card, index) => (
+    <Link key={index} to="/detail/1" className="group">
+      <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+
+        <div className="p-6 flex-1 flex flex-col space-y-2">
+          <h2 className="text-xl font-semibold">{card.title}</h2>
+          <p className="text-gray-600 flex-1">{card.description}</p>
+
+          {/* ⭐ Rating + 👁️ Views */}
+          <div className="flex items-center justify-between text-sm text-gray-700">
+            <span className="flex items-center space-x-1 mt-1">
+              ⭐ Rating <span className="ml-0.3"></span> <span>{card.rating} / 5</span>
+            </span>
+            <span>{card.views} views</span>
+          </div>
         </div>
+      </div>
+    </Link>
+  ))}
+</div>
+
       </section>
 
       {/* Popular Courses Section */}
-      <section className="space-y-12">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="font-lighter text-4xl font-mono">Popular Courses</h3>
-          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
-            See All →
-          </a>
+     <section className="space-y-12">
+  <div className="flex items-center justify-between mb-6">
+    <h3 className="font-lighter text-4xl font-mono">Popular Courses</h3>
+    <Link
+      to="/popular-courses"
+      className="text-black hover:text-gray-700 font-medium text-lg transition-colors"
+    >
+      See All →
+    </Link>
+  </div>
+
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  {cards.map((card, index) => (
+    <Link key={index} to="/detail/1" className="group">
+      <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+
+        <div className="p-6 flex-1 flex flex-col space-y-2">
+          <h2 className="text-xl font-semibold">{card.title}</h2>
+          <p className="text-gray-600 flex-1">{card.description}</p>
+
+          {/* ⭐ Rating + 👁️ Views */}
+          <div className="flex items-center justify-between text-sm text-gray-700">
+            <span className="flex items-center space-x-1 mt-1">
+              ⭐ Rating <span className="ml-0.3"></span> <span>{card.rating} / 5</span>
+            </span>
+            <span>{card.views} views</span>
+          </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <a key={index} href="#" className="group">
-              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-6 flex-1 flex flex-col space-y-2">
-                  <h2 className="text-xl font-semibold">{card.title}</h2>
-                  <p className="text-gray-600 flex-1">{card.description}</p>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      </div>
+    </Link>
+  ))}
+</div>
+</section>
+
 
 
       {/* Popular Teachers Section */}
-      <section className="space-y-12">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="font-lighter text-4xl font-mono">Popular Teachers</h3>
-          <a href="#" className="text-black hover:text-gray-700 font-medium text-lg transition-colors">
-            See All →
-          </a>
+<section className="space-y-12">
+  <div className="flex items-center justify-between mb-6">
+    <h3 className="font-lighter text-4xl font-mono">Popular Teachers</h3>
+    <Link
+      to="/popular-teachers"
+      className="text-black hover:text-gray-700 font-medium text-lg transition-colors"
+    >
+      See All →
+    </Link>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  {teachers.map((card, index) => (
+    <Link key={index} to="/detail/1" className="group">
+      <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+
+        <div className="p-6 flex-1 flex flex-col space-y-2">
+          <h2 className="text-xl font-semibold">{card.title}</h2>
+          <p className="text-gray-600 flex-1">{card.description}</p>
+
+          {/* ⭐ Rating + 👁️ Views */}
+          <div className="flex items-center justify-between text-sm text-gray-700">
+            <span className="flex items-center space-x-1 mt-1">
+              ⭐ Rating <span className="ml-0.3"></span> <span>{card.rating} / 5</span>
+            </span>
+            <span>{card.views} views</span>
+          </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <a key={index} href="#" className="group">
-              <div className="bg-amber-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-6 flex-1 flex flex-col space-y-2">
-                  <h2 className="text-xl font-semibold">{card.title}</h2>
-                  <p className="text-gray-600 flex-1">{card.description}</p>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      </div>
+    </Link>
+  ))}
+</div>
+</section>
 
       
 
