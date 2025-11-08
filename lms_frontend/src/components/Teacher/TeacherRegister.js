@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Eye, EyeOff, User, Lock, Mail, Sparkles } from 'lucide-react';
 
 function TeacherRegister() {
@@ -10,6 +10,10 @@ function TeacherRegister() {
     const interestsArray = interests.split(',').map(i => i.trim()).filter(i => i);
     console.log('Register submitted', { interests: interestsArray });
   };
+
+  useEffect(()=>{
+    document.title = 'Teacher Register'
+  })
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-red-200 pt-9 pb-9">

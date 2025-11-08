@@ -19,12 +19,14 @@ import TeacherLogin from './Teacher/TeacherLogin'
 import TeacherRegister from './Teacher/TeacherRegister'
 import TeacherDashboard from './Teacher/TeacherDashboard'
 import TeacherDetail from './TeacherDetail'
+import TitleManager from './TitleManager'
 
 function Main() {
   return (
     <div>
       <Header />
       <ScrollToTop />
+      <TitleManager />
       <Routes>
         <Route path='/' element={<Home />} ></Route>
         <Route path='all-courses' element={<AllCourses />}></Route>
